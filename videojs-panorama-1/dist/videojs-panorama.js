@@ -3373,7 +3373,7 @@ var VRButton = function (_Button) {
             }
         }
     }]);
-
+    
     return VRButton;
 }(_Button3.default);
 
@@ -3734,6 +3734,7 @@ var Panorama = function (_EventEmitter) {
             var vrButton = new _VRButton2.default(player, _this.options);
             vrButton.disable();
             _this.player.addComponent("VRButton", vrButton, _this.player.controlBar(), index - 1);
+            
         }
 
         _this.player.ready(function () {
@@ -3747,6 +3748,7 @@ var Panorama = function (_EventEmitter) {
             if (_this.options.VREnable) {
                 var _vrButton = _this.player.getComponent("VRButton");
                 _vrButton && _vrButton.enable();
+                //VRButton ready
             }
 
             if (_this.options.ready) {
@@ -3758,6 +3760,9 @@ var Panorama = function (_EventEmitter) {
         _this.player.registerTriggerCallback(function (eventName) {
             _this.trigger(eventName);
         });
+
+        
+
         return _this;
     }
 
